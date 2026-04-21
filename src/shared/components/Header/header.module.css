@@ -1,0 +1,17 @@
+
+.header {
+    display: flex;
+    padding-top: 15px;
+}
+
+.logoImg{
+    height: 44px;
+}
+
+.navBar{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin: 0 auto;
+}
+
