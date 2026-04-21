@@ -1,7 +1,8 @@
-import {Routing} from "../shared/routing/Routing.tsx";
+import {Routing} from "@/shared/routing/Routing.tsx";
+
 
 export const App = () => {
     return (
-        <Routing/>
+       <Routing/>
     )
 }
