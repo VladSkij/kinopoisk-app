@@ -1,0 +1,1 @@
+export type MainPageCategoryEndpoints = "popular" | "top_rated" | "upcoming" | "now_playing"

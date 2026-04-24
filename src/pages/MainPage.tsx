@@ -1,15 +1,13 @@
-import {useGetMoviesQuery} from "@/features/movies/moviesApi/moviesApi.ts";
+import {MovieList} from "@/features/movies/ui/MovieList/MovieList.tsx";
 
 export const MainPage = () => {
 
-    const {data, isLoading, isError} = useGetMoviesQuery("popular")
-   if(isLoading)return<div>Loading...</div>
-    if(isError)return<div>Something went wrong...</div>
     return(
         <div>
-            {data?.results.map(movie => (
-                <div key={movie.id}>{movie.title}</div>
-            ))}
+            <MovieList category={"popular"}/>
+            <MovieList category={"top_rated"}/>
+            <MovieList category={"upcoming"}/>
+            <MovieList category={"now_playing"}/>
         </div>
     )
 }
