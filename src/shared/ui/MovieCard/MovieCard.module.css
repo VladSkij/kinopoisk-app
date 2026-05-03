@@ -1,0 +1,51 @@
+.container{
+}
+.card{
+    position: relative;
+    display: block;
+}
+.title{
+
+}
+.img{
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+}
+.average{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    font-size: 14px;
+    font-weight: 600;
+
+    background-color: #aa3bff;
+}
+
+.favoriteBtn{
+    position: absolute;
+    display: flex;
+    opacity: 0;
+    transition: .5s;
+    right: 10px;
+    top: 10px;
+    z-index: 9;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    line-height: 0;
+}
+
+.card:hover .favoriteBtn{
+    opacity: 1;
+    display: block;
+}

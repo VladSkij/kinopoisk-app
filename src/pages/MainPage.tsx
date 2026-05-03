@@ -1,13 +1,13 @@
-import {MovieList} from "@/features/movies/ui/MovieList/MovieList.tsx";
+import {MoviesSection} from "@/features/movies/ui/MoviesSection/MoviesSection.tsx";
 
 export const MainPage = () => {
 
     return(
         <div>
-            <MovieList category={"popular"}/>
-            <MovieList category={"top_rated"}/>
-            <MovieList category={"upcoming"}/>
-            <MovieList category={"now_playing"}/>
+                <MoviesSection category="popular" categoryTitle="Popular Movies"/>
+                <MoviesSection category="top_rated" categoryTitle="Top Rated Movies"/>
+                <MoviesSection category="upcoming" categoryTitle="Upcoming Movies"/>
+                <MoviesSection category="now_playing" categoryTitle="Now Playing Movies"/>
         </div>
     )
 }
