@@ -9,9 +9,50 @@
 }
 
 .navBar{
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
     margin: 0 auto;
 }
+.navList{
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
 
+.navListItem {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.navList li:not(:last-child)::after {
+    content: "";
+    display: inline-block;
+    width: 2px;
+    height: 25px;
+    background-color: #01b4e4;
+    margin-left: 15px;
+    vertical-align: middle;
+}
+
+.navListItem:hover {
+    color:#01b4e4;
+}
+
+.themeBtn{
+    /*padding: 0;*/
+    /*margin: 0;*/
+    /*border-radius: 10px;*/
+    all: unset;
+    cursor: pointer;
+}
+
+.themeIcon{
+    border: 1px solid grey;
+    border-radius: 50%;
+    padding: 3px;
+    background-color: rgb(144 206 161 / 0.2);
+    color: #ffffff;
+    transition: transform 0.2s ease !important;
+}
+
+.themeIcon:hover{
+    transform: scale(1.1);
+}

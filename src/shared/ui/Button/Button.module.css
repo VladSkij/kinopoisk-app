@@ -1,0 +1,14 @@
+
+.button {
+    background: linear-gradient(to right, #01b4e4, #90cea1);
+    border-radius: 20px!important;
+    color: black!important;
+    padding: 5px 15px!important;
+    font-weight: 400!important;
+    font-size: 12px!important;
+    transition: transform 0.3s ease!important;
+    text-transform: none!important;
+}
+.button:hover {
+    transform: scale(1.05);
+}
