@@ -1,0 +1,40 @@
+
+.footer{
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    background-color: #0f172a;
+    border-top: 1px solid var(--primary-blue);
+}
+
+.inner{
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0;
+}
+.socialMediaList{
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 10px 0 0 0 ;
+}
+
+.socialMediaItem{
+
+}
+
+.socialMediaLink{
+    cursor: pointer;
+    color: var(--primary-blue);
+    transition: transform 0.2s ease;
+}
+
+.socialMediaLink svg {
+    transition: transform 0.2s ease;
+}
+.socialMediaLink svg:hover {
+    transform: scale(1.2);
+}

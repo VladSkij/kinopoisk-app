@@ -1,4 +1,4 @@
-export const CategoriesPage = () => {
+export const CategoryPage = () => {
     return (
         <div>
             Category Page

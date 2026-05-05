@@ -1,6 +1,6 @@
 
 
-export const FiltredPage = () => {
+export const FilteredPage = () => {
     return (
         <div>
             Filtred Page
