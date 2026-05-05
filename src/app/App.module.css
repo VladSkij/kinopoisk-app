@@ -4,6 +4,10 @@
     flex-direction: column;
 }
 
+.app[data-theme="dark"] {
+
+}
+
 .main{
     flex: 1;
 }

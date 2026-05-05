@@ -3,7 +3,7 @@
     width: 100vw;
     margin-left: calc(50% - 50vw);
     margin-right: calc(50% - 50vw);
-    background-color: #0f172a;
+    background-color: var(--bgFooteHeader);
     border-top: 1px solid var(--primary-blue);
 }
 
@@ -22,10 +22,6 @@
     margin: 10px 0 0 0 ;
 }
 
-.socialMediaItem{
-
-}
-
 .socialMediaLink{
     cursor: pointer;
     color: var(--primary-blue);
@@ -37,4 +33,7 @@
 }
 .socialMediaLink svg:hover {
     transform: scale(1.2);
+}
+.footerNote{
+    color: var(--customText);
 }

@@ -1,9 +1,18 @@
 
 .header {
-    display: flex;
     padding-top: 15px;
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    background-color: var(--bgFooteHeader);
+    border-bottom: 1px solid var(--primary-blue);
 }
 
+.inner{
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+}
 .logoImg{
     height: 44px;
 }
@@ -19,7 +28,7 @@
 
 .navListItem {
     text-decoration: none;
-    color: #ffffff;
+    color: var(--customText);
 }
 
 .navList li:not(:last-child)::after {
