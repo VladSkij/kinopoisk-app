@@ -25,7 +25,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  @media (max-width: 1024px) {
+  @media (max-width: 1126px) {
     font-size: 16px;
   }
 }
@@ -43,6 +43,11 @@
     --social-bg: rgba(47, 48, 58, 0.5);
     --shadow:
       rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
+
+    /*Own colors*/
+    --primary-green: rgb(144 206 161 / 0.6);
+    --primary-blue: #01b4e4;
+
   }
 
   #social .button-icon {
@@ -51,7 +56,7 @@
 }
 
 #root {
-  width: 1126px;
+  width: 1200px;
   max-width: 100%;
   margin: 0 auto;
   border-inline: 1px solid var(--border);

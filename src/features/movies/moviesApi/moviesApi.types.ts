@@ -4,7 +4,8 @@ export const moviesApiSchema = z.object({
     id: z.number().int().default(0),
     poster_path: z.string(),
     title:z.string(),
-    vote_average: z.number().default(0)
+    vote_average: z.number().default(0),
+    backdrop_path: z.string(),
 })
 
 export type Movie = z.infer<typeof moviesApiSchema>

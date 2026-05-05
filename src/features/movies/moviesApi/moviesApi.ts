@@ -6,7 +6,7 @@ export const moviesApi = baseApi.injectEndpoints({
     endpoints: (build) => ({
         getMovies: build.query<MoviesResponse, string>({
             query: (category) => `/movie/${category}`,
-            providesTags: ( category) => [{ type: "Movies", id: category }],
+            providesTags: ( _result, _error, category) => [{ type: "Movies", id: category }],
         }),
     }),
 })
