@@ -1,4 +1,3 @@
-
 .heroBanner {
     display: flex;
     align-items: center;
@@ -59,7 +58,7 @@
 }
 
 .input::placeholder {
-    color: #323030;
+    color: #ffffff;
 }
 
 .input:focus {

@@ -8,7 +8,8 @@
     margin-bottom: 15px;
 }
 .title{
-font-weight: bold;
+    font-weight: bold;
+    color: var(--customText);
 }
 .btn{
 

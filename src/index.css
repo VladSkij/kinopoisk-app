@@ -22,7 +22,7 @@
   letter-spacing: 0.18px;
   color-scheme: light dark;
   color: var(--text);
-  background: var(--bg);
+  /*background: var(--bg);*/
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -31,10 +31,12 @@
   @media (max-width: 1200px) {
     font-size: 16px;
   }
+
   /*Custom styles*/
   --bgFooteHeader: rgb(144 206 161 / 0.6);
   --primary-blue: #01b4e4;
-  --customText: #000000
+  --customText: #000000;
+  --primary-green: rgb(144 206 161 / 0.6);
 }
 [data-theme="dark"] {
   --bgFooteHeader: #0f172a;
