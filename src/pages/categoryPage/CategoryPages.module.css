@@ -1,0 +1,7 @@
+.CategoryButtons{
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px 0;
+}

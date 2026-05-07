@@ -2,7 +2,7 @@ import {Path} from "@/shared/routing/paths.ts"
 import {Routes, Route} from "react-router-dom";
 import {MainPage} from "@/pages/MainPage.tsx";
 import {NotFoundPage} from "@/pages/NotFoundPage.tsx";
-import {CategoryPage} from "@/pages/CategoryPage"
+import {CategoryPage} from "../../pages/categoryPage/CategoryPage"
 import {FilteredPage} from "@/pages/FiltredPage.tsx";
 import {SearchPage} from "@/pages/SearchPage.tsx";
 import {FavoritesPage} from "@/pages/FavoritesPage.tsx";
