@@ -4,7 +4,7 @@ import s from './HeroBanner.module.css'
 
 
 export const HeroBanner = () => {
-    const {data} = useGetMoviesQuery("popular")
+    const {data} = useGetMoviesQuery({ category: "popular" })
 
     const {banner} =useHeroBanner(data?.results ?? [])
     return (
