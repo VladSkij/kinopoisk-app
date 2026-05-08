@@ -19,3 +19,15 @@ export const MoviesResponseApiSchema = z.object({
 })
 
 export type MoviesResponse = z.infer<typeof MoviesResponseApiSchema>
+
+export const GenreApiSchema = z.object({
+    id: z.number().int(),
+    name: z.string(),
+})
+
+export const GenresResponseApiSchema= z.object({
+    genres: z.array(GenreApiSchema),
+})
+
+export type GenresResponse = z.infer<typeof GenresResponseApiSchema>
+export type Genre = z.infer<typeof GenreApiSchema>
