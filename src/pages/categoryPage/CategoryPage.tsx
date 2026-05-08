@@ -19,14 +19,16 @@ export const CategoryPage = () => {
     const countPages = data?.total_pages
     return (
         <>
-            <ul className={s.CategoryButtons}>
+            <ul className={s.categoryButtons}>
                 <li><Button children={'Popular Movies'} onClick={()=> activeCategoryHandler('popular')} isActive={activeCategory === "popular"}/></li>
                 <li><Button children={'Top Rated Movies'} onClick={()=> activeCategoryHandler('top_rated')} isActive={activeCategory === "top_rated"}/></li>
                 <li><Button children={'Upcoming Movies'} onClick={()=> activeCategoryHandler('upcoming')} isActive={activeCategory === "upcoming"}/></li>
                 <li><Button children={'Now Playing Movies'} onClick={()=> activeCategoryHandler('now_playing')} isActive={activeCategory === "now_playing"}/></li>
             </ul>
             <MovieList category={activeCategory} page={currentPage}/>
-            <Pagination count={countPages} page={currentPage}  onChange={(_, page) => setCurrentPage(page)}/>
+            <div className={s.paginationWrapper}>
+                <Pagination count={countPages} page={currentPage}  onChange={(_, page) => setCurrentPage(page)}/>
+            </div>
         </>
         )
 }
