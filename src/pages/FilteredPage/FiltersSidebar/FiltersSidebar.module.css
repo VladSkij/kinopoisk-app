@@ -1,0 +1,19 @@
+
+.filtersSidebarList {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+.btn{
+    background-color: var(--primary-blue);
+    border-radius: 20px;
+    cursor: pointer;
+    align-items: center;
+    padding: 5px 15px;
+    min-width: 100px;
+    color: #323030;
+    border: 2px solid var(--primary-green);
+    font-size: 16px;
+
+}
