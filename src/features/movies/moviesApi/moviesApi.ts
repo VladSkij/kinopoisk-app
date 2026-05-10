@@ -1,5 +1,9 @@
 import {baseApi} from "@/shared/api/baseApi.ts";
-import type {GenresResponse, MoviesResponse} from "@/features/movies/moviesApi/moviesApi.types.ts";
+import type {
+    FilteredMoviesParams,
+    GenresResponse,
+    MoviesResponse
+} from "@/features/movies/moviesApi/moviesApi.types.ts";
 
 const defaultPageToShow = 1
 
@@ -12,8 +16,12 @@ export const moviesApi = baseApi.injectEndpoints({
         getGenres: build.query<GenresResponse,void>({
             query: ()=> `/genre/movie/list`,
             providesTags: ["Genres"]
+        }),
+        getFilteredMovies: build.query<MoviesResponse, FilteredMoviesParams>({
+            query: ({ sortBy, ratingMin, ratingMax, genres, page }) =>
+                `/discover/movie?sort_by=${sortBy}&vote_average.gte=${ratingMin}&vote_average.lte=${ratingMax}&with_genres=${genres.join(',')}&page=${page}`,
         })
     }),
 })
 
-export const {useGetMoviesQuery, useGetGenresQuery} = moviesApi;
+export const {useGetMoviesQuery, useGetGenresQuery, useGetFilteredMoviesQuery} = moviesApi;

@@ -1,4 +1,5 @@
 import {z} from "zod"
+import type {SortCategoryValues} from "@/pages/FilteredPage/FiltersSidebar/SortSelect/lib/types/types.ts";
 
 export const moviesApiSchema = z.object({
     id: z.number().int().default(0),
@@ -9,7 +10,6 @@ export const moviesApiSchema = z.object({
 })
 
 export type Movie = z.infer<typeof moviesApiSchema>
-
 
 export const MoviesResponseApiSchema = z.object({
     page: z.number().int().default(0),
@@ -28,6 +28,15 @@ export const GenreApiSchema = z.object({
 export const GenresResponseApiSchema= z.object({
     genres: z.array(GenreApiSchema),
 })
+
+export type FilteredMoviesParams = {
+    sortBy: SortCategoryValues
+    ratingMin: number
+    ratingMax: number
+    genres: number[]
+    page: number
+}
+
 
 export type GenresResponse = z.infer<typeof GenresResponseApiSchema>
 export type Genre = z.infer<typeof GenreApiSchema>
