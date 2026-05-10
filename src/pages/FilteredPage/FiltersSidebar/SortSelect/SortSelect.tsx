@@ -1,16 +1,26 @@
-import {FormControl, InputLabel, MenuItem, Select} from "@mui/material";
+import {FormControl, InputLabel, MenuItem, Select, type SelectChangeEvent} from "@mui/material";
+import type {SortCategoryValues} from "@/pages/FilteredPage/FiltersSidebar/SortSelect/lib/types/types.ts";
 
+type Props = {
+    onSortChange: (value: SortCategoryValues) => void;
+    sortValue: SortCategoryValues;
+}
 
-export const SortSelect = () => {
+export const SortSelect = ({onSortChange, sortValue}:Props) => {
+
+    const handleChange = (event: SelectChangeEvent) =>{
+        onSortChange(event.target.value as SortCategoryValues);
+    }
+
     return (
 
         <FormControl fullWidth>
             <InputLabel id="sortSelect">Sort by</InputLabel>
             <Select
                 labelId="sortSelect"
-                value={"popularity.desc"}
+                value={sortValue}
                 label="Sort by"
-                // onChange={handleChange}
+                onChange={handleChange}
             >
                 <MenuItem value={"popularity.desc"}>Popularity Down</MenuItem>
                 <MenuItem value={"popularity.asc"}>PopularityTop</MenuItem>

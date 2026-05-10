@@ -1,9 +1,14 @@
-
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
 .filtersSidebarList {
     list-style: none;
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
+    padding: 0;
 }
 .btn{
     background-color: var(--primary-blue);
