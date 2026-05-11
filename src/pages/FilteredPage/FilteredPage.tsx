@@ -4,6 +4,7 @@ import s from './FilteredPage.module.css'
 import {useState} from "react";
 import type {SortCategoryValues} from "@/pages/FilteredPage/FiltersSidebar/SortSelect/lib/types/types.ts";
 import {useGetFilteredMoviesQuery} from "@/features/movies/moviesApi/moviesApi.ts";
+import {Pagination} from "@mui/material";
 
 export const FilteredPage = () => {
     const [sortBy, setSortBuy] = useState<SortCategoryValues>('popularity.desc')
@@ -32,9 +33,6 @@ export const FilteredPage = () => {
         setRating([0,10])
         setGenresId([])
     }
-    const onChangePageHandler = (page:number) => {
-        setCurrentPage(page)
-    }
 
     return (
         <div className={s.container}>
@@ -51,11 +49,11 @@ export const FilteredPage = () => {
             <section className={s.filteredList}>
                 <FilteredMovieList
                     filteredList={data?.results ?? []}
-                    currentPage={currentPage}
-                    countPages={countPages}
-                    setCurrentPage={onChangePageHandler}
                     />
             </section>
+            <div className={s.paginationWrapper}>
+                <Pagination count={countPages} page={currentPage}  onChange={(_, page)=>setCurrentPage(page)}/>
+            </div>
         </div>
     );
 };
