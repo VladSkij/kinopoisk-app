@@ -8,7 +8,7 @@ import {useGetFilteredMoviesQuery} from "@/features/movies/moviesApi/moviesApi.t
 export const FilteredPage = () => {
 
     const [sortBy, setSortBuy] = useState<SortCategoryValues>('popularity.desc')
-    const [rating, setRating] = useState<number[]>([10,10])
+    const [rating, setRating] = useState<number[]>([0,10])
     const [genresId, setGenresId] = useState<number[]>([])
     const [page, setPage] = useState(1)
 
@@ -18,10 +18,35 @@ export const FilteredPage = () => {
         setSortBuy(sort)
     }
 
+    const onRatingChangeHandler = (rating:number[]) => {
+        setRating(rating)
+    }
+
+    const onGenreChangeHandler = (genreId:number) => {
+        setGenresId(prev =>
+            prev.includes(genreId)
+                ? prev.filter(g => g !== genreId)
+                : [...prev, genreId]
+        )
+    }
+
+    const onResetFiltersHandler = () =>{
+        setSortBuy('popularity.desc')
+        setRating([0,10])
+        setGenresId([])
+    }
+
     return (
         <div className={s.container}>
             <aside className={s.sideBar}>
-                <FiltersSidebar onSortChange={onSortChangeHandler} sortValue={sortBy}/>
+                <FiltersSidebar
+                    onSortChange={onSortChangeHandler}
+                    sortValue={sortBy}
+                    onRatingChange={onRatingChangeHandler}
+                    onGenreChange={onGenreChangeHandler}
+                    genresId={genresId}
+                    onResetFilters={onResetFiltersHandler}
+                />
             </aside>
             <section className={s.filteredList}>
                 <FilteredMovieList filteredList={data?.results ?? []} />

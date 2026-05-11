@@ -7,22 +7,26 @@ import type {SortCategoryValues} from "@/pages/FilteredPage/FiltersSidebar/SortS
 
 type Props = {
     onSortChange: (sort:SortCategoryValues)=>void;
+    onRatingChange: (rating:number[]) => void;
     sortValue:SortCategoryValues;
+    onGenreChange:(genreId:number) => void;
+    genresId:number[];
+    onResetFilters:() => void;
 }
 
-export const FiltersSidebar = ({onSortChange, sortValue}:Props) => {
+export const FiltersSidebar = ({onSortChange, sortValue, onRatingChange, onGenreChange, genresId, onResetFilters}:Props) => {
     const {data, } = useGetGenresQuery()
 
     return (
         <div className={s.container}>
             <SortSelect  onSortChange={onSortChange} sortValue={sortValue}/>
-            <RatingSlider onRatingChange={() => {} }/>
+            <RatingSlider onRatingChange={onRatingChange}/>
             <ul className={s.filtersSidebarList}>
                 {data?.genres.map((genre) => (
-                    <li key={genre.id}><Button children={genre.name}/></li>
+                    <li key={genre.id}><Button children={genre.name} onClick={()=>onGenreChange(genre.id)} isActive={genresId.includes(genre.id)}/></li>
                 ))}
             </ul>
-            <button className={s.btn} type="submit">Reset filters</button>
+            <Button children={"Reset filters"} onClick={onResetFilters}/>
         </div>
     );
 };
