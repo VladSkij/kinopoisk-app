@@ -13,17 +13,18 @@ export const FilteredPage = () => {
     const [page, setPage] = useState(1)
 
     const {data} = useGetFilteredMoviesQuery({ sortBy, ratingMin:rating[0], ratingMax:rating[1], genres:genresId, page })
-    console.log(data)
+
+    const onSortChangeHandler = (sort:SortCategoryValues)=>{
+        setSortBuy(sort)
+    }
+
     return (
         <div className={s.container}>
             <aside className={s.sideBar}>
-                <FiltersSidebar sortBy={sortBy}/>
+                <FiltersSidebar onSortChange={onSortChangeHandler} sortValue={sortBy}/>
             </aside>
             <section className={s.filteredList}>
-                <FilteredMovieList/>
-                {data?.results.map(movie => (
-                    <div key={movie.id}>{movie.title}</div>
-                ))}
+                <FilteredMovieList filteredList={data?.results ?? []} />
             </section>
         </div>
     );

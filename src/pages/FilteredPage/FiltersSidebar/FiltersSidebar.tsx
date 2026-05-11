@@ -6,17 +6,16 @@ import {RatingSlider} from "@/pages/FilteredPage/FiltersSidebar/RatingSlider/Rat
 import type {SortCategoryValues} from "@/pages/FilteredPage/FiltersSidebar/SortSelect/lib/types/types.ts";
 
 type Props = {
-    sortBy: SortCategoryValues;
+    onSortChange: (sort:SortCategoryValues)=>void;
+    sortValue:SortCategoryValues;
 }
 
-export const FiltersSidebar = ({sortBy}:Props) => {
+export const FiltersSidebar = ({onSortChange, sortValue}:Props) => {
     const {data, } = useGetGenresQuery()
-    const handler = (a:SortCategoryValues)=>{
-        console.log(a)
-    }
+
     return (
         <div className={s.container}>
-            <SortSelect sortValue={sortBy} onSortChange={handler}/>
+            <SortSelect  onSortChange={onSortChange} sortValue={sortValue}/>
             <RatingSlider onRatingChange={() => {} }/>
             <ul className={s.filtersSidebarList}>
                 {data?.genres.map((genre) => (
