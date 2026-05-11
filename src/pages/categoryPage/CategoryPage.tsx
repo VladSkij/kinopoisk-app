@@ -7,7 +7,6 @@ import {Pagination} from "@mui/material";
 import {useGetMoviesQuery} from "@/features/movies/moviesApi/moviesApi.ts";
 
 export const CategoryPage = () => {
-
     const [activeCategory, setActiveCategory] = useState<MoveCategoryEndpoints>('popular')
     const [currentPage, setCurrentPage] = useState(1)
 

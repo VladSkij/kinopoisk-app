@@ -6,22 +6,20 @@ import type {SortCategoryValues} from "@/pages/FilteredPage/FiltersSidebar/SortS
 import {useGetFilteredMoviesQuery} from "@/features/movies/moviesApi/moviesApi.ts";
 
 export const FilteredPage = () => {
-
     const [sortBy, setSortBuy] = useState<SortCategoryValues>('popularity.desc')
     const [rating, setRating] = useState<number[]>([0,10])
     const [genresId, setGenresId] = useState<number[]>([])
-    const [page, setPage] = useState(1)
+    const [currentPage, setCurrentPage] = useState(1)
 
-    const {data} = useGetFilteredMoviesQuery({ sortBy, ratingMin:rating[0], ratingMax:rating[1], genres:genresId, page })
+    const {data} = useGetFilteredMoviesQuery({ sortBy, ratingMin:rating[0], ratingMax:rating[1], genres:genresId, page:currentPage })
+    const countPages = data?.total_pages
 
     const onSortChangeHandler = (sort:SortCategoryValues)=>{
         setSortBuy(sort)
     }
-
     const onRatingChangeHandler = (rating:number[]) => {
         setRating(rating)
     }
-
     const onGenreChangeHandler = (genreId:number) => {
         setGenresId(prev =>
             prev.includes(genreId)
@@ -29,11 +27,13 @@ export const FilteredPage = () => {
                 : [...prev, genreId]
         )
     }
-
     const onResetFiltersHandler = () =>{
         setSortBuy('popularity.desc')
         setRating([0,10])
         setGenresId([])
+    }
+    const onChangePageHandler = (page:number) => {
+        setCurrentPage(page)
     }
 
     return (
@@ -49,7 +49,12 @@ export const FilteredPage = () => {
                 />
             </aside>
             <section className={s.filteredList}>
-                <FilteredMovieList filteredList={data?.results ?? []} />
+                <FilteredMovieList
+                    filteredList={data?.results ?? []}
+                    currentPage={currentPage}
+                    countPages={countPages}
+                    setCurrentPage={onChangePageHandler}
+                    />
             </section>
         </div>
     );

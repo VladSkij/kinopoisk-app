@@ -7,17 +7,16 @@ type Props ={
     category:MoveCategoryEndpoints
     limit?:number
     page?:number
+    className?: string
 }
 
-
-
-export const MovieList = ({category, limit, page}:Props) => {
+export const MovieList = ({category, limit, page, className}:Props) => {
 
     const {data, isLoading, isError} = useGetMoviesQuery({category, page})
     if(isLoading)return<div>Loading...</div>
     if(isError)return<div>Something went wrong...</div>
     return(
-        <ul className={s.list}>
+        <ul className={`${s.list} ${className ?? ''}`}>
             {data?.results.slice(0, limit ?? data.results.length).map(movie => (
                 <li key={movie.id}><MovieCard movie={movie}/></li>
             ))}

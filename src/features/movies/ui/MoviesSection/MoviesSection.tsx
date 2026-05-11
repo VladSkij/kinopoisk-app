@@ -20,7 +20,7 @@ export const MoviesSection = ({category, categoryTitle, limit}:Props) => {
                 <h2 className={s.title}>{categoryTitle}</h2>
                 <div className={s.btn}><Button onClick={onClickFn}>View more</Button></div>
             </div>
-            <div className={s.listContainer}><MovieList category={category} limit={limit}/></div>
+            <div className={s.listContainer}><MovieList category={category} limit={limit} className={s.mainPageList}/></div>
         </div>
     );
 };
