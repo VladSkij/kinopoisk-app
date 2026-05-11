@@ -12,7 +12,7 @@ export const MovieCard = ({ movie }: Props)=>{
     return (
         <div className={s.container}>
             <a className={s.card}>
-                <img src={`https://image.tmdb.org/t/p/w500${poster_path}`} alt={title} className={s.img}/>
+                <img src={poster_path ? `https://image.tmdb.org/t/p/w500${poster_path}`:'https://placehold.co/500x750/1a1a2e/1a1a2e'} alt={title} className={s.img}/>
                 <span className={s.average}>{roundedRating}</span>
                 <button className={s.favoriteBtn}><FavoriteIcon fontSize='small'/></button>
             </a>

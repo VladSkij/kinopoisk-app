@@ -20,6 +20,7 @@ export const moviesApi = baseApi.injectEndpoints({
         getFilteredMovies: build.query<MoviesResponse, FilteredMoviesParams>({
             query: ({ sortBy, ratingMin, ratingMax, genres, page }) =>
                 `/discover/movie?sort_by=${sortBy}&vote_average.gte=${ratingMin}&vote_average.lte=${ratingMax}&with_genres=${genres.join(',')}&page=${page}`,
+            providesTags: ["FilteredMovies"]
         })
     }),
 })

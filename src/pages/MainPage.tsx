@@ -8,10 +8,10 @@ export const MainPage = () => {
         <>
                 <HeroBanner/>
             <section>
-                <MoviesSection   category="popular" categoryTitle="Popular Movies" limit={limitMoveCard} />
+                <MoviesSection  category="popular" categoryTitle="Popular Movies" limit={limitMoveCard} />
                 <MoviesSection  category="top_rated" categoryTitle="Top Rated Movies" limit={limitMoveCard} />
                 <MoviesSection  category="upcoming" categoryTitle="Upcoming Movies" limit={limitMoveCard} />
-                <MoviesSection category="now_playing" categoryTitle="Now Playing Movies" limit={limitMoveCard} />
+                <MoviesSection  category="now_playing" categoryTitle="Now Playing Movies" limit={limitMoveCard} />
             </section>
         </>
     )
