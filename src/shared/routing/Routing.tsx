@@ -4,7 +4,7 @@ import {MainPage} from "@/pages/MainPage.tsx";
 import {NotFoundPage} from "@/pages/NotFoundPage.tsx";
 import {CategoryPage} from "../../pages/categoryPage/CategoryPage"
 import {FilteredPage} from "../../pages/FilteredPage/FilteredPage.tsx";
-import {SearchPage} from "@/pages/SearchPage.tsx";
+import {SearchPage} from "../../pages/SearchPage/SearchPage.tsx";
 import {FavoritesPage} from "@/pages/FavoritesPage.tsx";
 
 

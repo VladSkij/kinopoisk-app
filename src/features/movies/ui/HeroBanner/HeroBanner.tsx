@@ -1,6 +1,7 @@
 import {useGetMoviesQuery} from "@/features/movies/moviesApi/moviesApi.ts";
 import {useHeroBanner} from "@/features/movies/ui/HeroBanner/useHeroBanner.ts";
 import s from './HeroBanner.module.css'
+import {SearchInput} from "@/shared/components/SearchInput/SearchInput.tsx";
 
 
 export const HeroBanner = () => {
@@ -16,10 +17,7 @@ export const HeroBanner = () => {
                <div className={s.content}>
                    <h2 className={s.title}>Welcome</h2>
                    <p className={s.text}>Browse highlighted titles from TMDB</p>
-                   <form className={s.form}>
-                       <input className={s.input} placeholder='Search for a movie'/>
-                       <button className={s.btn} type="submit">Search</button>
-                   </form>
+                    <SearchInput />
                </div>
            </section>
     );

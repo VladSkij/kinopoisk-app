@@ -37,11 +37,13 @@
   --primary-blue: #01b4e4;
   --customText: #000000;
   --primary-green: rgb(144 206 161 / 0.6);
+  --title:#000000
 }
 [data-theme="dark"] {
   --bgFooteHeader: #0f172a;
   --customText: #fff;
   --bgASide: #0f172a;
+  --searchPageText: rgb(144 206 161);
 }
 [data-theme="light"] {
   --bgASide: rgb(144 206 161 / 0.6);

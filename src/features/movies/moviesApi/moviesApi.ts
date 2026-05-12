@@ -21,8 +21,11 @@ export const moviesApi = baseApi.injectEndpoints({
             query: ({ sortBy, ratingMin, ratingMax, genres, page }) =>
                 `/discover/movie?sort_by=${sortBy}&vote_average.gte=${ratingMin}&vote_average.lte=${ratingMax}&with_genres=${genres.join(',')}&page=${page}`,
             providesTags: ["FilteredMovies"]
+        }),
+        getSearchedMovies: build.query<MoviesResponse, {search:string, page:number}>({
+            query: ({search, page=defaultPageToShow})=> `/search/movie?query=${search}&page=${page}`,
         })
     }),
 })
 
-export const {useGetMoviesQuery, useGetGenresQuery, useGetFilteredMoviesQuery} = moviesApi;
+export const {useGetMoviesQuery, useGetGenresQuery, useGetFilteredMoviesQuery, useGetSearchedMoviesQuery} = moviesApi;
