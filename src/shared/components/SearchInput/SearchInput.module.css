@@ -35,5 +35,10 @@
     color: #323030;
     border: 2px solid var(--primary-green);
     font-size: 16px;
+}
 
+.btn:disabled{
+    /*background-color: red;*/
+    opacity: 0.5;
+    cursor: not-allowed;
 }

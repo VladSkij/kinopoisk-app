@@ -13,11 +13,12 @@ export const SearchInput = ({onSearch}:Props) => {
         onSearch(inputValue);
     }
 
+
     return (
         <div>
             <form className={s.form} onSubmit={(e)=>{e.preventDefault(); submitHandler(inputValue)}}>
                 <input className={s.input} placeholder='Search for a movie' onChange={(e)=>setInputValue(e.target.value)} />
-                <button className={s.btn} type="submit">Search</button>
+                <button className={s.btn} type="submit" disabled={!inputValue.trim()}>Search</button>
             </form>
         </div>
     );
